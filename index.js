@@ -32,7 +32,7 @@ app.post('/users', (req,res) => {
     });
 });
 
-app.post('/create', (req,res) => {
+app.get('/create', (req,res) => {
     const text = 'CREATE TABLE users (id SERIAL PRIMARY KEY,username VARCHAR(15),bio VARCHAR(255))'
     client.query(text, values, (err, result) => {
         res.send(result.rows)
