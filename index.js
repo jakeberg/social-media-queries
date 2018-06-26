@@ -32,13 +32,6 @@ app.post('/users', (req,res) => {
     });
 });
 
-app.get('/create', (req,res) => {
-    const text = 'CREATE TABLE users (id SERIAL PRIMARY KEY,username VARCHAR(15),bio VARCHAR(255))'
-    client.query(text, values, (err, result) => {
-        res.send(result.rows)
-    });
-});
-
 // start a server that listens on port 3000 and connects the sql client on success
 app.listen(3000, () => {
     client.connect();
